@@ -4,8 +4,8 @@
 @import './scss/fonts_icon.scss';
 
 $width1600: 1780px;
-$tablet: 1300px;
-$mobile: 768px;
+$tablet: 1160px;
+$mobile: 860px;
 
 
 $font-raleway: 'Raleway', sans-serif;
@@ -306,12 +306,15 @@ header, footer {
     }
     &__content {
         margin: auto;
-        display: grid;
-        grid-template-columns: minmax(40%, 1fr) auto minmax(40%, 1fr);
+        // display: grid;
+        // grid-template-columns: minmax(40%, 1fr) auto minmax(40%, 1fr);
+        display: flex;
+        justify-content: space-between;
         justify-content: center;
         gap: 22px;
         @media (max-width: $mobile) {
-            grid-template-columns: 1fr;  
+            // grid-template-columns: 1fr;  
+            flex-direction: column;
             gap: 12px;       
         }
         img {
@@ -323,8 +326,8 @@ header, footer {
             line-height: 28px;
             font-weight: 600;
             @media (max-width: 1390px) {
-                padding-left: 20px;
-                padding-right: 20px;
+                padding-left: 15px;
+                padding-right: 15px;
             }
             @media (max-width: $tablet) {
                 font-size: 16px;
@@ -338,11 +341,14 @@ header, footer {
             }
         }
         .col-1 {
+            flex: 0 1 40%;
             display: flex;
             flex-direction: column;
             gap: 20px;
+            min-width: 270px;
             @media (max-width: $mobile) {
                 order: 1;
+                min-width: none;
             }
             .custom-button {
                 font-family: $font-RFDewiExpanded;
@@ -374,6 +380,7 @@ header, footer {
                 }
             }
             .col-1__row-1 {
+                flex: 1 0 auto;
                 flex-direction: column;
                 justify-content: space-between;
                 align-items: flex-start;
@@ -403,6 +410,7 @@ header, footer {
             }
         }
         .col-2 {
+            flex: 1 1 20%;
             text-align: center;
             font-size: 18px;
             line-height: 21px;
@@ -423,6 +431,7 @@ header, footer {
                 order: 3;
                 display: grid;
                 grid-template-columns: 1fr 1fr;
+                gap: 12px;
             }
             .title {
                 @media (max-width: $width1600) {
@@ -463,9 +472,9 @@ header, footer {
                 padding: 24px;
                 background: #171717;
                 border-radius: 18px;
-                @media (max-width: $tablet) {
-                    padding: 12px 6px;
-                }
+                // @media (max-width: $tablet) {
+                //     padding: 12px 6px;
+                // }
             }
             .gif {
                 @include flex(center, center, row);
@@ -475,6 +484,7 @@ header, footer {
             }
         }
         .col-3 {
+            flex: 0 1 40%;
             position: relative;
             border-radius: 18px;
             background: linear-gradient(274.95deg, #F2CEFF -6.01%, #3F3369 68.06%, #171717 98.24%);
@@ -548,7 +558,7 @@ header, footer {
             display: flex;
             background-color: #171717;
             border-radius: 18px;
-            padding: 25px;
+            padding: 0 !important;
             flex-direction: row;
             justify-content: space-between;
             transition: all 0.3s ease;
@@ -731,6 +741,7 @@ header, footer {
             justify-content: space-between;
             &__col {
                 @include flex(space-between, flex-start, column);
+                gap: 12px;
                 max-width: 52.72525%; /* 474/899 */
                 padding: 25px 5px 25px 25px;
                 @media (max-width: $tablet) {
