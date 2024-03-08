@@ -1025,6 +1025,19 @@ header, footer {
     } 
 }
 
+.close_popup {
+    path, circle {
+        stroke:#303030;
+        transition: all 0.3s ease;
+    }
+    &:hover {
+        path, circle {
+            stroke:#e5e5e5;
+        }
+    }
+
+}
+
 .footer {
     height: 100%;
     max-height: 272px;

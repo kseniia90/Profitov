@@ -1633,6 +1633,14 @@ header, footer {
   padding: 0 16px 16px 16px;
 }
 
+.close_popup path, .close_popup circle {
+  stroke: #303030;
+  transition: all 0.3s ease;
+}
+.close_popup:hover path, .close_popup:hover circle {
+  stroke: #e5e5e5;
+}
+
 .footer {
   height: 100%;
   max-height: 272px;
