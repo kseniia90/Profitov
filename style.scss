@@ -100,7 +100,6 @@ header, footer {
     border-radius: 59px;
     color:  $black;
     white-space: nowrap;
-    text-decoration: underline;
     transition: all 0.3s ease;
     @media (min-width: $mobile) {
         &:hover {
@@ -207,7 +206,7 @@ header, footer {
     position: relative;
     video {
         width: 100%;
-        margin-top: -120px;
+        margin-top: -200px;
         position: absolute;
         top: 0;
         left: 0;
@@ -323,7 +322,6 @@ header, footer {
             font-size: 24px;
             line-height: 28px;
             font-weight: 600;
-            text-decoration: none;
             @media (max-width: 1390px) {
                 padding-left: 20px;
                 padding-right: 20px;
@@ -633,8 +631,8 @@ header, footer {
     }
     >.container {
         height: 100%;
-        @include flex(space-between, center, column);
-        gap: 20px;
+        @include flex(flex-start, center, column);
+        gap: 67px;
         padding-bottom: 67px;
         @media (max-width: $tablet) {
             padding-bottom: 55px;

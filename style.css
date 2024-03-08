@@ -471,7 +471,6 @@ header, footer {
   border-radius: 59px;
   color: #030303;
   white-space: nowrap;
-  text-decoration: underline;
   transition: all 0.3s ease;
 }
 @media (min-width: 768px) {
@@ -601,7 +600,7 @@ header, footer {
 }
 .first-screen video {
   width: 100%;
-  margin-top: -120px;
+  margin-top: -200px;
   position: absolute;
   top: 0;
   left: 0;
@@ -741,7 +740,6 @@ header, footer {
   font-size: 24px;
   line-height: 28px;
   font-weight: 600;
-  text-decoration: none;
 }
 @media (max-width: 1390px) {
   .second-screen__content .custom-button {
@@ -1151,10 +1149,10 @@ header, footer {
 .third-screen > .container {
   height: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  gap: 20px;
+  gap: 67px;
   padding-bottom: 67px;
 }
 @media (max-width: 1300px) {
