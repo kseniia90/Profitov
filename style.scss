@@ -199,7 +199,7 @@ header, footer {
     width: 100%;
     height:100vh;
     scroll-snap-align: start;
-    border: 1px solid red;
+    overflow: hidden;
 }
 
 .first-screen {
@@ -298,6 +298,10 @@ header, footer {
 
 .second-screen {
     @include flex(center, center, row);
+    min-height: 700px;
+    @media (max-width: $tablet) {
+        min-height:auto;
+    }
     @media (max-width: $mobile) {
         height: auto;
     }
@@ -320,6 +324,10 @@ header, footer {
             line-height: 28px;
             font-weight: 600;
             text-decoration: none;
+            @media (max-width: 1390px) {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
             @media (max-width: $tablet) {
                 font-size: 16px;
                 line-height: 18.5px;
@@ -327,6 +335,8 @@ header, footer {
             @media (max-width: $mobile) {
                 font-size: 12px;
                 line-height: 14px;
+                padding-left: 24px;
+                padding-right: 24px;
             }
         }
         .col-1 {
@@ -565,6 +575,7 @@ header, footer {
                 @include flex(space-between, flex-start, column);
                 max-width: 46.91689%; /* 350/746 */
                 padding: 25px 5px 25px 25px;
+                gap: 25px;
                 @media (max-width: $width1600) {
                     padding: 24px 5px 24px 24px;
                 }
@@ -580,14 +591,21 @@ header, footer {
             .col-1__img {
                 width: 40%;
                 height: 100%;
-                @include flex(center, stretch, row);
-                @include flex(center, stretch, row);
+                @include flex(flex-end, stretch, row);
                 @media (max-width: $width1600) {
                     align-items: flex-end;
+                }
+                @media (max-width: $mobile) {
+                    justify-content: flex-start;
+                    width: auto;
                 }
             }
             img {
                 width: 80%;
+                @media (max-width: $mobile) {
+                    max-height: 140px;
+                    width: auto;
+                }
             }
         }
         .col-1__row.col-1__row-2 {
@@ -602,10 +620,12 @@ header, footer {
 .third-screen {
     @include flex(space-between, center, column);
     padding: 70px 0;
+    min-height: 800px;
     @media (max-width: $width1600) {
         padding: 50px 0;
     }
     @media (max-width: $tablet) {
+        min-height:auto;
         padding: 45px 0;
     }
     @media (max-width: $mobile) {
@@ -730,11 +750,17 @@ header, footer {
                 @media (max-width: $tablet) {
                     padding-top: 40px;              
                 }
+                @media (max-width: $mobile) {
+                    padding-top: 0;              
+                }
             }
             img {
                 width: 100%;
                 max-height: 304px;
                 object-fit: contain;
+                @media (max-width: $tablet) {
+                    max-height: 215px;              
+                }
             }
             transition: all 0.3s ease;
         }
@@ -1054,7 +1080,7 @@ header, footer {
             @media (max-width: $mobile) {
                 justify-content: space-between;
                 a {
-                    width: 48%;
+                    width: 47%;
                 }
                 .insta {
                     order: -1;

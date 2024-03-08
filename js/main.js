@@ -61,31 +61,10 @@ $(".accordion__title").on("click", function (e) {
 });
 
 new WOW().init();
-// $('.wow').hide();
 
-// gsap.registerPlugin(ScrollTrigger);
+// let fullView;
 
-// gsap.to(".second-screen", {
-//   scrollTrigger: {
-//     scroller: ".container2",
-//     trigger: ".section-02",
-//     start: 'center 55%',
-//     markers: true,
-//     toggleActions: 'play complete restart reverse',
-//     onEnter: function(ScrollTrigger) {
-//       console.log(ScrollTrigger.progress)
-//       $('.wow').each(function(i, e) {
-//         if ($(e).data('wow-delay')) {
-//           setTimeout(function() {
-//             $(e).show().addClass('animate__animated animate__bounceInUp');
-//           }, $(e).data('wow-delay') * 1000);
-//         } else {
-//           $(e).show().addClass('animate__animated animate__bounceInUp');
-//         }
-//       });
-//     }
-//   }, 
-//   duration: 2,
-//   ease: 'back'
-// });
-
+// if ($(window).width() > 768) {
+//   $('body').css('overflow', 'hidden');
+//   fullView = $("#fullview").fullView({dots: false});
+// }
