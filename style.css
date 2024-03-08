@@ -728,7 +728,7 @@ header, footer {
 }
 @media (max-width: 860px) {
   .second-screen__content {
-    flex-direction: column;
+    display: grid;
     gap: 12px;
   }
 }

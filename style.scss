@@ -313,8 +313,7 @@ header, footer {
         justify-content: center;
         gap: 22px;
         @media (max-width: $mobile) {
-            // grid-template-columns: 1fr;  
-            flex-direction: column;
+             display: grid;
             gap: 12px;       
         }
         img {
