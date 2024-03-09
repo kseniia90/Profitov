@@ -62,14 +62,14 @@ $(".accordion__title").on("click", function (e) {
 
 new WOW().init();
 
-const screens = document.querySelectorAll(".screen");
-let currentScreen = 0;
-
-function scrollToScreen(screenIndex) {
-  if (screenIndex < 0 || screenIndex >= screens.length) return;
-  const targetScreen = screens[screenIndex];
-  targetScreen.scrollIntoView({ behavior: "smooth" });
-  currentScreen = screenIndex;
+function isOnScreen(element) {
+  if (
+    $(window).scrollTop() < $(element).offset().top ||
+    $(window).scrollTop() >= $(element).offset().top + $(element).height()
+  ) {
+    return false;
+  }
+  return true;
 }
 
 window.addEventListener(
@@ -77,10 +77,24 @@ window.addEventListener(
   (event) => {
     if (event.deltaY < 0) {
       event.preventDefault();
-      scrollToScreen(currentScreen - 1);
+      $("#fullview .screen").each(function (i, e) {
+        if (isOnScreen(e)) {
+          if ($(e).prev().length) {
+            $(e).prev()[0].scrollIntoView({ behavior: "smooth" });
+          }
+          return false;
+        }
+      });
     } else if (event.deltaY > 0) {
       event.preventDefault();
-      scrollToScreen(currentScreen + 1);
+      $("#fullview .screen").each(function (i, e) {
+        if (isOnScreen(e)) {
+          if ($(e).next().length) {
+            $(e).next()[0].scrollIntoView({ behavior: "smooth" });
+          }
+          return false;
+        }
+      });
     }
   },
   {
