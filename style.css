@@ -611,6 +611,7 @@ header, footer {
   }
 }
 .first-screen .video video {
+  width: 100vw;
   margin-top: -200px;
 }
 .first-screen .video video::-webkit-media-controls {
@@ -734,11 +735,13 @@ header, footer {
   justify-content: center;
   align-items: center;
   flex-direction: row;
+  padding: 70px 0;
   min-height: 700px;
 }
 @media (max-width: 1160px) {
   .second-screen {
     min-height: auto;
+    padding: 45px 0 0;
   }
 }
 @media (max-width: 860px) {
