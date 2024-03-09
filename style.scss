@@ -208,20 +208,37 @@ header, footer {
 .first-screen {
     overflow: hidden;
     position: relative;
-    video {
+    .video {
         width: 100vw;
-        // height: 100vh;
-        // object-fit: fill;
-        margin-top: -200px;
         position: absolute;
         top: 0;
         left: 0;
         z-index: -1;
-        @media (max-width: $tablet) {
-            margin-top: -60px;
-        }
         @media (max-width: $mobile) {
-            margin-top: 0; 
+            height: 100%;
+        }
+        video {
+            // width: 100vw;
+            margin-top: -200px;   
+            &::-webkit-media-controls {
+                display: none;
+            }       
+            @media (max-width: $tablet) {
+                margin-top: -60px;
+            }
+            @media (max-width: $mobile) {
+                // margin-top: 0; 
+                display: none;
+            }
+        }
+        img {
+            display: none;
+            @media (max-width: $mobile) {
+                display: block;
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
         }
     }
     video::-webkit-media-controls {
@@ -246,7 +263,7 @@ header, footer {
                 max-width: none;
                 justify-content: flex-end;
                 align-items: center;
-                padding-bottom: 60px;
+                padding-bottom: 50px;
                 h2 {
                     text-align: center;
                     font-size: 40px;
