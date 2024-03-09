@@ -599,11 +599,12 @@ header, footer {
   position: relative;
 }
 .first-screen video {
-  width: 100%;
+  width: 100vw;
   margin-top: -200px;
   position: absolute;
   top: 0;
   left: 0;
+  z-index: -1;
 }
 @media (max-width: 1160px) {
   .first-screen video {
@@ -614,6 +615,9 @@ header, footer {
   .first-screen video {
     margin-top: 0;
   }
+}
+.first-screen video::-webkit-media-controls {
+  display: none;
 }
 .first-screen__content {
   position: relative;
@@ -630,7 +634,7 @@ header, footer {
   max-width: 504px;
   display: flex;
   justify-content: space-between;
-  align-items: space-between;
+  align-items: center;
   flex-direction: column;
   gap: 20px;
 }
@@ -642,6 +646,7 @@ header, footer {
     max-width: none;
     justify-content: flex-end;
     align-items: center;
+    padding-bottom: 60px;
   }
   .first-screen__content aside h2 {
     text-align: center;

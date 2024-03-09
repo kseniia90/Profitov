@@ -62,9 +62,28 @@ $(".accordion__title").on("click", function (e) {
 
 new WOW().init();
 
-// let fullView;
+const screens = document.querySelectorAll(".screen");
+let currentScreen = 0;
 
-// if ($(window).width() > 768) {
-//   $('body').css('overflow', 'hidden');
-//   fullView = $("#fullview").fullView({dots: false});
-// }
+function scrollToScreen(screenIndex) {
+  if (screenIndex < 0 || screenIndex >= screens.length) return;
+  const targetScreen = screens[screenIndex];
+  targetScreen.scrollIntoView({ behavior: "smooth" });
+  currentScreen = screenIndex;
+}
+
+window.addEventListener(
+  "wheel",
+  (event) => {
+    if (event.deltaY < 0) {
+      event.preventDefault();
+      scrollToScreen(currentScreen - 1);
+    } else if (event.deltaY > 0) {
+      event.preventDefault();
+      scrollToScreen(currentScreen + 1);
+    }
+  },
+  {
+    passive: false,
+  }
+);
