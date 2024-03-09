@@ -634,7 +634,7 @@ header, footer {
   max-width: 504px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: stretch;
   flex-direction: column;
   gap: 20px;
 }

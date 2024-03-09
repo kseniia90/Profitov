@@ -237,7 +237,7 @@ header, footer {
         aside {
             height: 100%;
             max-width: 504px;
-            @include flex(space-between, center, column);
+            @include flex(space-between, stretch, column);
             gap: 20px;
             .buttons-block {
                 display: none;
@@ -304,7 +304,6 @@ header, footer {
         }
     }
 }
-
 
 .second-screen {
     @include flex(center, center, row);
