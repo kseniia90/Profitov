@@ -624,7 +624,7 @@ header, footer {
     height: 100px;
     position: absolute;
     bottom: 0;
-    background: linear-gradient(to bottom, transparent, #030303);
+    background: linear-gradient(to bottom, transparent, black);
   }
 }
 .first-screen .video video {
