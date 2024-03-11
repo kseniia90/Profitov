@@ -675,7 +675,7 @@ header, footer {
     gap: 12px;
     text-align: center;
   }
-  .first-screen__content aside .buttons-block a {
+  .first-screen__content aside .buttons-block .custom-button {
     text-decoration: none;
     text-transform: capitalize;
     font-size: 12px;
@@ -1323,9 +1323,27 @@ header, footer {
 }
 .third-screen__content .col {
   display: flex;
-  background-color: #171717;
+  flex-direction: row;
+  justify-content: space-between;
   border-radius: 18px;
   min-height: 304px;
+  background-color: #171717;
+  -webkit-backface-visibility: hidden;
+  position: relative;
+  z-index: 2;
+}
+.third-screen__content .col:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  background-image: linear-gradient(274.95deg, #F2CEFF -6.01%, #3F3369 68.06%, #171717 98.24%);
+  transition: all 0.3s ease;
+  z-index: 1;
+  opacity: 0;
 }
 @media (max-width: 1160px) {
   .third-screen__content .col {
@@ -1333,10 +1351,16 @@ header, footer {
     min-height: 166px;
   }
 }
+@media (max-width: 860px) {
+  .third-screen__content .col {
+    padding-right: 5px;
+  }
+}
 .third-screen__content .col .subtitle-2 {
   white-space: nowrap;
+  margin-bottom: 10px;
 }
-@media (max-width: 390px) {
+@media (max-width: 350px) {
   .third-screen__content .col .subtitle-2 {
     white-space: normal;
   }
@@ -1358,17 +1382,7 @@ header, footer {
     line-height: 14px;
   }
 }
-.third-screen__content .col-1 {
-  flex-direction: row;
-  justify-content: space-between;
-  transition: all 0.3s ease;
-}
-@media (max-width: 860px) {
-  .third-screen__content .col-1 {
-    padding-right: 12px;
-  }
-}
-.third-screen__content .col-1__col {
+.third-screen__content .col .col-1__col {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -1376,61 +1390,82 @@ header, footer {
   gap: 12px;
   max-width: 52.72525%; /* 474/899 */
   padding: 25px 5px 25px 25px;
+  position: relative;
+  z-index: 2;
+}
+.third-screen__content .col .col-1__col > div {
+  width: 100%;
 }
 @media (max-width: 1160px) {
-  .third-screen__content .col-1__col {
+  .third-screen__content .col .col-1__col {
     padding: 12px;
   }
 }
-.third-screen__content .col-1 .col-1__img {
+.third-screen__content .col .col-1__img {
   width: 40%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: stretch;
   flex-direction: row;
+  position: relative;
+  z-index: 2;
+}
+.third-screen__content .col .col-1__img .active {
+  display: none;
 }
 @media (max-width: 1780px) {
-  .third-screen__content .col-1 .col-1__img {
+  .third-screen__content .col .col-1__img {
     align-items: flex-end;
     padding-top: 70px;
   }
 }
 @media (max-width: 1160px) {
-  .third-screen__content .col-1 .col-1__img {
+  .third-screen__content .col .col-1__img {
     padding-top: 10px;
   }
 }
 @media (max-width: 990px) {
-  .third-screen__content .col-1 .col-1__img {
+  .third-screen__content .col .col-1__img {
     padding-top: 30px;
   }
 }
 @media (max-width: 860px) {
-  .third-screen__content .col-1 .col-1__img {
+  .third-screen__content .col .col-1__img {
     padding-top: 0;
+    justify-content: flex-end;
   }
 }
 @media (max-width: 510px) {
-  .third-screen__content .col-1 .col-1__img {
+  .third-screen__content .col .col-1__img {
     padding-top: 40px;
   }
 }
 @media (max-width: 400px) {
-  .third-screen__content .col-1 .col-1__img {
+  .third-screen__content .col .col-1__img {
     padding-top: 0;
   }
 }
-.third-screen__content .col-1 img {
+.third-screen__content .col img {
   width: 100%;
   max-height: 304px;
   -o-object-fit: contain;
      object-fit: contain;
 }
 @media (max-width: 1160px) {
-  .third-screen__content .col-1 img {
+  .third-screen__content .col img {
     max-height: 215px;
+    width: auto;
   }
+}
+.third-screen__content .col:hover::after {
+  opacity: 1;
+}
+.third-screen__content .col:hover .static {
+  display: none;
+}
+.third-screen__content .col:hover .active {
+  display: flex;
 }
 
 .sign-up_popup {
@@ -1830,8 +1865,10 @@ header, footer {
     padding: 11px 47px;
   }
 }
-.footer .container .footer-row-1 a span:last-child {
-  text-decoration: underline;
+@media (max-width: 860px) {
+  .footer .container .footer-row-1 a {
+    padding: 11px;
+  }
 }
 @media (max-width: 860px) {
   .footer .container .footer-row-1 {
