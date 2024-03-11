@@ -1423,6 +1423,11 @@ header, footer {
 .third-screen__content .col .col-1__img .active {
   display: none;
 }
+@media (max-width: 860px) {
+  .third-screen__content .col .col-1__img .active {
+    display: block;
+  }
+}
 @media (max-width: 1780px) {
   .third-screen__content .col .col-1__img {
     align-items: flex-end;
@@ -1443,6 +1448,9 @@ header, footer {
   .third-screen__content .col .col-1__img {
     padding-top: 0;
     justify-content: flex-end;
+  }
+  .third-screen__content .col .col-1__img .static {
+    display: none;
   }
 }
 @media (max-width: 510px) {

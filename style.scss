@@ -869,6 +869,9 @@ header, footer {
                 z-index: 2;
                 .active {
                     display: none;
+                    @media (max-width: $mobile) {
+                        display: block;               
+                    }
                 }
                 @media (max-width: $width1600) {
                     align-items: flex-end;
@@ -882,7 +885,10 @@ header, footer {
                 }
                 @media (max-width: $mobile) {
                     padding-top: 0;
-                    justify-content: flex-end;                 
+                    justify-content: flex-end;   
+                    .static {
+                        display: none;
+                    }              
                 }
                 @media (max-width: 510px) {
                     padding-top: 40px;              
