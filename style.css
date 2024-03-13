@@ -1210,6 +1210,7 @@ header, footer {
 @media (max-width: 1200px) {
   .second-screen__content .col-1__row-2 {
     padding: 12px;
+    max-height: 180px;
   }
 }
 @media (max-width: 767px) {
@@ -1265,13 +1266,13 @@ header, footer {
 }
 .second-screen__content .col-1__row-2 .col-1__img {
   flex: 0 1 42%;
-  height: calc(100% + 10px);
+  height: calc(100% + 25px);
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
   flex-direction: row;
   position: relative;
-  top: -10px;
+  top: -25px;
   z-index: 5;
   padding-right: 15px;
   overflow: hidden;
@@ -1279,9 +1280,12 @@ header, footer {
 .second-screen__content .col-1__row-2 .col-1__img .active {
   display: none;
 }
-@media (max-width: 1850px) {
+@media (max-width: 1800px) {
   .second-screen__content .col-1__row-2 .col-1__img {
-    align-items: flex-end;
+    flex: 0 1 41%;
+    height: calc(100% + 15px);
+    position: relative;
+    top: -15px;
   }
 }
 @media (max-width: 1780px) {
@@ -1297,13 +1301,13 @@ header, footer {
 @media (max-width: 1440px) {
   .second-screen__content .col-1__row-2 .col-1__img {
     flex: 0 1 40%;
-    height: 100%;
-    top: 0;
   }
 }
 @media (max-width: 1270px) {
   .second-screen__content .col-1__row-2 .col-1__img {
     flex: 0 1 35%;
+    height: 100%;
+    top: 0;
   }
 }
 @media (max-width: 1200px) {
@@ -1325,17 +1329,12 @@ header, footer {
   }
 }
 .second-screen__content .col-1__row-2 img {
-  height: 110%;
+  height: 105%;
   max-height: 110%;
   -o-object-fit: contain;
      object-fit: contain;
 }
-@media (max-width: 1850px) {
-  .second-screen__content .col-1__row-2 img {
-    height: 105%;
-  }
-}
-@media (max-width: 1780px) {
+@media (max-width: 767px) {
   .second-screen__content .col-1__row-2 img {
     height: 110%;
   }

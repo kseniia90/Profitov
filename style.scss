@@ -717,6 +717,7 @@ header, footer {
             }
             @media (max-width: $tablet) {
                 padding: 12px;
+                max-height: 180px;
             }
             @media (max-width: $mobile) {
                 max-height: 141px;
@@ -758,18 +759,21 @@ header, footer {
             }
             .col-1__img {
                 flex: 0 1 42%;
-                height: calc(100% + 10px);
+                height: calc(100% + 25px);
                 @include flex(flex-end, flex-start, row);
                 position: relative;
-                top: -10px;
+                top: -25px;
                 z-index: 5;
                 padding-right: 15px;
                 overflow: hidden;
                 .active {
                    display: none;
                 }
-                @media (max-width:1850px) {
-                    align-items: flex-end;    
+                @media (max-width:1800px) {
+                    flex: 0 1 41%;
+                    height: calc(100% + 15px);
+                    position: relative;
+                    top: -15px;
                 }
                 @media (max-width: $width1600) {
                     align-items: flex-start;
@@ -779,11 +783,11 @@ header, footer {
                 }
                 @media (max-width: 1440px) {
                     flex: 0 1 40%;
-                    height: 100%;
-                    top: 0;
                 }
                 @media (max-width: 1270px) {
                     flex: 0 1 35%;
+                    height: 100%;
+                    top: 0;
                 }
                 @media (max-width: $tablet) {
                     flex: 0 1 42%;
@@ -791,9 +795,6 @@ header, footer {
                 @media (max-width: 915px) {
                     flex: 0 1 40%;
                 }
-                // @media (max-width: 841px) {
-                //     flex: 0 1 38%;
-                // }
                 @media (max-width: $mobile) {
                     flex: 0 1 42%;
                     padding-right: 12px;
@@ -802,13 +803,10 @@ header, footer {
                 }
             }
             img {
-                height: 110%;
+                height: 105%;
                 max-height: 110%;
                 object-fit: contain;
-                @media (max-width:1850px) {
-                    height: 105%;        
-                }
-                @media (max-width: $width1600) {
+                @media (max-width: $mobile) {
                     height: 110%;     
                 }
             }
