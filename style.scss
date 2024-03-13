@@ -372,7 +372,7 @@ header, footer {
         min-height:auto;
         padding: 45px 0 0;
     }
-    @media (max-width: $mobile) {
+    @media (max-width: 992px) {
         height: auto;
     }
     &__content {
@@ -841,7 +841,7 @@ header, footer {
         min-height:auto;
         padding: 45px 0;
     }
-    @media (max-width: $mobile) {
+    @media (max-width: 992px) {
         height: auto;
     }
     >.container {
