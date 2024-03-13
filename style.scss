@@ -806,7 +806,7 @@ header, footer {
                 max-height: 110%;
                 object-fit: contain;
                 @media (max-width:1850px) {
-                    height: 95%;        
+                    height: 105%;        
                 }
                 @media (max-width: $width1600) {
                     height: 110%;     
@@ -1005,6 +1005,7 @@ header, footer {
                 @media (max-width: $width1600) {
                     height: 100%;
                     top: 0;
+                    object-fit: cover;
                     padding-top: 30px;
                 }
                 @media (max-width:1660px) {

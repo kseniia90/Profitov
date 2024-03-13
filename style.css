@@ -1332,7 +1332,7 @@ header, footer {
 }
 @media (max-width: 1850px) {
   .second-screen__content .col-1__row-2 img {
-    height: 95%;
+    height: 105%;
   }
 }
 @media (max-width: 1780px) {
@@ -1583,6 +1583,8 @@ header, footer {
   .third-screen__content .col .col-1__img {
     height: 100%;
     top: 0;
+    -o-object-fit: cover;
+       object-fit: cover;
     padding-top: 30px;
   }
 }
