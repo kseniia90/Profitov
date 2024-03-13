@@ -1329,14 +1329,13 @@ header, footer {
   }
 }
 .second-screen__content .col-1__row-2 img {
-  height: 105%;
-  max-height: 110%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  height: 110%;
+  max-height: 120%;
 }
-@media (max-width: 767px) {
+@media (max-width: 1455px) {
   .second-screen__content .col-1__row-2 img {
-    height: 110%;
+    -o-object-fit: contain;
+       object-fit: contain;
   }
 }
 .second-screen__content .col-1__row-2:hover::after {

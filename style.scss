@@ -803,11 +803,11 @@ header, footer {
                 }
             }
             img {
-                height: 105%;
-                max-height: 110%;
-                object-fit: contain;
-                @media (max-width: $mobile) {
-                    height: 110%;     
+                height: 110%;
+                max-height: 120%;
+                // object-fit: contain;
+                @media (max-width: 1455px) {
+                    object-fit: contain;    
                 }
             }
             &:hover{  
