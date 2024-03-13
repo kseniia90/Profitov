@@ -4,8 +4,8 @@
 @import './scss/fonts_icon.scss';
 
 $width1600: 1780px;
-$tablet: 1160px;
-$mobile: 860px;
+$tablet: 1200px;
+$mobile: 767px;
 
 
 $font-raleway: 'Raleway', sans-serif;
@@ -297,6 +297,7 @@ header, footer {
             max-width: 504px;
             @include flex(space-between, stretch, column);
             gap: 20px;
+            padding-bottom: 70px;
             .buttons-block {
                 display: none;
             }
@@ -380,9 +381,11 @@ header, footer {
         justify-content: space-between;
         justify-content: center;
         gap: 22px;
+        @media (max-width: $tablet) {
+           gap: 12px;       
+        }
         @media (max-width: $mobile) {
-             display: grid;
-            gap: 12px;       
+             display: grid;      
         }
         img {
             max-width: 100%;
@@ -392,13 +395,19 @@ header, footer {
             font-size: 24px;
             line-height: 28px;
             font-weight: 600;
-            @media (max-width: 1390px) {
+            @media (max-width: 1400px) {
                 padding-left: 15px;
                 padding-right: 15px;
             }
             @media (max-width: $tablet) {
                 font-size: 16px;
                 line-height: 18.5px;
+            }
+            @media (max-width: 915px) {
+                font-size: 14px;
+                line-height: 16px;
+                padding-left: 10px;
+                padding-right: 10px;
             }
             @media (max-width: $mobile) {
                 font-size: 12px;
@@ -408,7 +417,7 @@ header, footer {
             }
         }
         .col-1 {
-            flex: 0 1 40%;
+            flex: 0 1 41%;
             display: flex;
             flex-direction: column;
             gap: 20px;
@@ -430,6 +439,12 @@ header, footer {
                 }
                 @media (max-width: $tablet) {
                     max-width: 180px;
+                    font-size: 20px;
+                }
+                @media (max-width: 915px) {
+                    font-size: 18px;
+                }
+                @media (max-width: $mobile) {
                     font-size: 20px;
                 }
             }
@@ -509,7 +524,7 @@ header, footer {
             }
         }
         .col-2 {
-            flex: 1 1 20%;
+            flex: 1 1 16%;
             text-align: center;
             font-size: 18px;
             line-height: 21px;
@@ -548,6 +563,9 @@ header, footer {
             }
             .subtitle {
                 color: #4F4F4F;
+                @media (max-width: 915px) {
+                    font-size: 18px;
+                }
                 @media (max-width: $mobile) {
                     font-size: 28px;
                     line-height: 32px;
@@ -561,7 +579,7 @@ header, footer {
                     font-size: 14px;
                     line-height: 16px;
                 }
-                @media (max-width: $mobile) {
+                @media (max-width: $tablet) {
                     font-size: 9px;
                     line-height: 10px;
                 }
@@ -571,7 +589,7 @@ header, footer {
                 padding: 24px;
                 background: #171717;
                 border-radius: 18px;
-                @media (max-width: $mobile) {
+                @media (max-width: $tablet) {
                     padding: 12px;
                 }
                 @media (max-width: 370px) {
@@ -586,7 +604,7 @@ header, footer {
             }
         }
         .col-3 {
-            flex: 0 1 40%;
+            flex: 0 1 41%;
             position: relative;
             border-radius: 18px;
             padding: 24px;
@@ -678,6 +696,7 @@ header, footer {
             -webkit-backface-visibility: hidden;
             position: relative;
             z-index: 2;
+            max-height: 306px;
             &:after {
                 position: absolute;
                 content: '';
@@ -694,9 +713,13 @@ header, footer {
             @media (max-width: $width1600) {
                 border-radius: 12px;
                 padding: 24px;
+                max-height: 220px;
             }
             @media (max-width: $tablet) {
                 padding: 12px;
+            }
+            @media (max-width: $mobile) {
+                max-height: 141px;
             }
             &.mobile {
                 display: none;
@@ -734,35 +757,59 @@ header, footer {
                 }
             }
             .col-1__img {
-                width: 40%;
-                height: 100%;
-                @include flex(center, center, row);
+                flex: 0 1 42%;
+                height: calc(100% + 10px);
+                @include flex(flex-end, flex-start, row);
                 position: relative;
+                top: -10px;
                 z-index: 5;
-                padding-right: 25px;
+                padding-right: 15px;
+                overflow: hidden;
                 .active {
                    display: none;
                 }
-                @include flex(flex-end, stretch, row);
+                @media (max-width:1850px) {
+                    align-items: flex-end;    
+                }
                 @media (max-width: $width1600) {
-                    align-items: flex-end;
+                    align-items: flex-start;
                 }
-                @media (max-width: 1180px) {
+                @media (max-width: 1520px) {
                     padding-right: 10px;
-                    width: 37%;
                 }
+                @media (max-width: 1440px) {
+                    flex: 0 1 40%;
+                    height: 100%;
+                    top: 0;
+                }
+                @media (max-width: 1270px) {
+                    flex: 0 1 35%;
+                }
+                @media (max-width: $tablet) {
+                    flex: 0 1 42%;
+                }
+                @media (max-width: 915px) {
+                    flex: 0 1 40%;
+                }
+                // @media (max-width: 841px) {
+                //     flex: 0 1 38%;
+                // }
                 @media (max-width: $mobile) {
-                    width: 40%;
+                    flex: 0 1 42%;
                     padding-right: 12px;
                     justify-content: flex-start;
                     width: auto;
                 }
             }
             img {
-                width: 80%;
-                @media (max-width: $mobile) {
-                    max-height: 140px;
-                    width: auto;
+                height: 110%;
+                max-height: 110%;
+                object-fit: contain;
+                @media (max-width:1850px) {
+                    height: 95%;        
+                }
+                @media (max-width: $width1600) {
+                    height: 110%;     
                 }
             }
             &:hover{  
@@ -859,10 +906,6 @@ header, footer {
             grid-template-columns: 1fr;    
             gap: 12px;       
         }
-        img {
-            max-width: 100%;
-            max-height: 100%;
-        }
         .custom-button {
             font-family: $font-RFDewiExpanded;
             font-size: 24px;
@@ -888,6 +931,7 @@ header, footer {
             -webkit-backface-visibility: hidden;
             position: relative;
             z-index: 2;
+            max-height: 304px;
             &:after {
                 position: absolute;
                 content: '';
@@ -904,7 +948,8 @@ header, footer {
             @media (max-width: $tablet) {
                 border-radius: 12px;   
                 min-height: 166px;    
-                padding-right: 12px;         
+                padding-right: 12px;  
+                max-height: 215px;        
             }
             .subtitle-2 {
                 white-space: nowrap;
@@ -939,13 +984,18 @@ header, footer {
                 @media (max-width: $tablet) {
                     padding: 12px;              
                 }
+                @media (max-width: 600px) {
+                    max-width: 58%;             
+                }
             }
             .col-1__img {
-                width: 40%;
-                height: 100%;
-                @include flex(flex-end, stretch, row);
+                width: 45%;
+                height: calc(100% + 25px);
+                @include flex(flex-end, flex-start, row);
                 position: relative;
+                top: -25px;
                 z-index: 2;
+                overflow: hidden;
                 .active {
                     display: none;
                     @media (max-width: $mobile) {
@@ -953,36 +1003,50 @@ header, footer {
                     }
                 }
                 @media (max-width: $width1600) {
-                    align-items: flex-end;
-                    padding-top: 70px;
+                    height: 100%;
+                    top: 0;
+                    padding-top: 30px;
                 }
-                @media (max-width:1160px) {
-                    padding-top: 10px;              
+                @media (max-width:1660px) {
+                    padding-top: 50px;              
                 }
-                @media (max-width: 990px) {
-                    padding-top: 30px;              
+                @media (max-width:1530px) {
+                    padding-top: 60px;              
+                }
+                @media (max-width: 1250px) {
+                    padding-top: 40px;              
+                }
+                @media (max-width: 1200px) {
+                    padding-top: 0;  
+                    height: calc(100% + 25px);  
+                    top: -25px;          
+                }
+                @media (max-width: 1070px) {
+                    padding-top: 15px;  
+                    height: 100%;  
+                    top: 0;          
                 }
                 @media (max-width: $mobile) {
-                    padding-top: 0;
-                    // justify-content: flex-end;   
+                    padding-top: 20px; 
                     .static {
                         display: none;
                     }              
                 }
-                @media (max-width: 510px) {
-                    padding-top: 40px;              
-                }
-                @media (max-width: 400px) {
-                    padding-top: 0;           
-                }
+
             }
             img {
-                // width: 100%;
-                max-height: 304px;
+                height: 110%;
+                max-width: 100%;
+                position: relative;
                 object-fit: contain;
-                @media (max-width: $tablet) {
-                    max-height: 215px;    
-                    width: auto;          
+                @media (max-width:1530px) {
+                    height: 120%;        
+                }
+                @media (max-width: $mobile) {
+                    height: 110%;     
+                }
+                @media (max-width: 500px) {
+                    height: 120%;     
                 }
             }
             &:hover{  
