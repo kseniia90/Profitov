@@ -805,7 +805,6 @@ header, footer {
             img {
                 height: 110%;
                 max-height: 120%;
-                // object-fit: contain;
                 @media (max-width: 1455px) {
                     object-fit: contain;    
                 }
