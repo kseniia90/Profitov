@@ -681,18 +681,26 @@ header, footer {
                 }
             }
             &__img {
-                width: 100%;
-                height: 100%;
+                width: 70%;
                 position: absolute;
+                top: 0;
+                right: 0;
                 z-index: 2;
                 @include flex(center, center, row);
                 @media (max-width: $tablet) {
                     justify-content: flex-end;
                     padding-right: 12px;
+                    width: 75%;
+                }
+                @media (max-width: $mobile) {
+                    width: 100%;
+                    height: 100%;
+                }
+                @media (max-width: 500px) {
+                    height: 80%;
                 }
             }
         }
-
         .col-1__row-2 {
             display: flex;
             border-radius: 18px;
@@ -931,7 +939,7 @@ header, footer {
             justify-content: space-between;
             border-radius: 18px;
             min-height: 304px;
-            padding-right: 24px;
+            padding-right: 18px;
             background-color: #171717;
             -webkit-backface-visibility: hidden;
             position: relative;
@@ -953,7 +961,7 @@ header, footer {
             @media (max-width: $tablet) {
                 border-radius: 12px;   
                 min-height: 166px;    
-                padding-right: 12px;  
+                padding-right: 8px;  
                 max-height: 215px;        
             }
             .subtitle-2 {
@@ -1064,6 +1072,18 @@ header, footer {
                 }
                 .active {
                    display: flex;
+                }
+            }
+            &.col-1:first-of-type {
+                padding-right: 7px;
+                @media (max-width: $width1600) {
+                    padding-right: 12px;             
+                }
+                @media (max-width: $tablet) {
+                    padding-right: 3px;             
+                }
+                @media (max-width: $mobile) {
+                    padding-right: 5px;             
                 }
             }
         }
