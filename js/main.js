@@ -72,29 +72,56 @@ function isOnScreen(element) {
   return true;
 }
 
+let scrollAllowed = true;
 window.addEventListener(
   "wheel",
   (event) => {
     if (event.deltaY < 0) {
       event.preventDefault();
-      $("#fullview .screen").each(function (i, e) {
-        if (isOnScreen(e)) {
-          if ($(e).prev().length) {
-            $(e).prev()[0].scrollIntoView({ behavior: "smooth" });
+      if (scrollAllowed) {
+        $("#fullview .screen").each(function (i, e) {
+          if (isOnScreen(e)) {
+            if ($(e).prev().length) {
+              // $(e).prev()[0].scrollIntoView({ behavior: "smooth" });
+              scrollAllowed = false;
+              $("html, body").css("scroll-behavior", "auto");
+              $("html").animate(
+                { scrollTop: $(e).prev().offset().top },
+                800,
+                "swing",
+                function () {
+                  scrollAllowed = true;
+                  $("html, body").css("scroll-behavior", "");
+                }
+              );
+            }
+            return false;
           }
-          return false;
-        }
-      });
+        });
+      }
     } else if (event.deltaY > 0) {
       event.preventDefault();
-      $("#fullview .screen").each(function (i, e) {
-        if (isOnScreen(e)) {
-          if ($(e).next().length) {
-            $(e).next()[0].scrollIntoView({ behavior: "smooth" });
+      if (scrollAllowed) {
+        $("#fullview .screen").each(function (i, e) {
+          if (isOnScreen(e)) {
+            if ($(e).next().length) {
+              // $(e).next()[0].scrollIntoView({ behavior: "smooth" });
+              scrollAllowed = false;
+              $("html, body").css("scroll-behavior", "auto");
+              $("html").animate(
+                { scrollTop: $(e).next().offset().top },
+                800,
+                "swing",
+                function () {
+                  scrollAllowed = true;
+                  $("html, body").css("scroll-behavior", "");
+                }
+              );
+            }
+            return false;
           }
-          return false;
-        }
-      });
+        });
+      }
     }
   },
   {
