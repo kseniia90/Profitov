@@ -775,10 +775,10 @@ header, footer {
             }
             .col-1__img {
                 flex: 0 1 42%;
-                height: calc(100% + 25px);
+                height: calc(100% + 20px);
                 @include flex(flex-end, flex-start, row);
                 position: relative;
-                top: -25px;
+                top: -20px;
                 z-index: 5;
                 padding-right: 15px;
                 overflow: hidden;
