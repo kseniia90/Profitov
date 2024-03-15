@@ -76,9 +76,9 @@ let scrollAllowed = true;
 window.addEventListener(
   "wheel",
   (event) => {
-    if (event.deltaY < 0) {
-      event.preventDefault();
-      if (scrollAllowed) {
+    event.preventDefault();
+    if (scrollAllowed && Math.abs(event.deltaY) > 5) {
+      if (event.deltaY < 0) {
         $("#fullview .screen").each(function (i, e) {
           if (isOnScreen(e)) {
             if ($(e).prev().length) {
@@ -98,10 +98,7 @@ window.addEventListener(
             return false;
           }
         });
-      }
-    } else if (event.deltaY > 0) {
-      event.preventDefault();
-      if (scrollAllowed) {
+      } else if (event.deltaY > 0) {
         $("#fullview .screen").each(function (i, e) {
           if (isOnScreen(e)) {
             if ($(e).next().length) {
