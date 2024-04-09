@@ -783,6 +783,74 @@ header, footer {
     display: none;
   }
 }
+.first-screen__cookie {
+  position: absolute;
+  z-index: 10;
+  bottom: 10px;
+  right: 46px;
+  max-width: 593px;
+  padding: 24px;
+  border-radius: 18px;
+  background: rgba(3, 3, 3, 0.8);
+  text-align: left;
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 23.12px;
+  text-align: end;
+}
+@media (max-width: 1780px) {
+  .first-screen__cookie {
+    max-width: 363px;
+    padding: 12px;
+    font-size: 12px;
+    line-height: 13.87px;
+  }
+}
+@media (max-width: 920px) {
+  .first-screen__cookie {
+    max-width: 215px;
+  }
+}
+@media (max-width: 767px) {
+  .first-screen__cookie {
+    max-width: none;
+    position: static;
+  }
+}
+.first-screen__cookie h4 {
+  text-transform: uppercase;
+  font-family: "Benzin", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 23.12px;
+  margin-bottom: 12px;
+  text-align: start;
+}
+@media (max-width: 1780px) {
+  .first-screen__cookie h4 {
+    font-size: 14px;
+    line-height: 16.19px;
+  }
+}
+.first-screen__cookie p {
+  opacity: 0.5;
+  margin-bottom: 24px;
+  text-align: start;
+}
+.first-screen__cookie .custom-button {
+  font-family: "RFDewiExpanded", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 27.75px;
+}
+@media (max-width: 1780px) {
+  .first-screen__cookie .custom-button {
+    font-size: 16px;
+    line-height: 18.5px;
+    padding: 12px 24px;
+  }
+}
 
 .second-screen {
   display: flex;
@@ -1447,7 +1515,7 @@ header, footer {
   align-self: start;
   position: relative;
   display: inline-block;
-  max-width: 910px;
+  max-width: 1130px;
 }
 @media (max-width: 1200px) {
   .third-screen .title {
@@ -2025,6 +2093,95 @@ header, footer {
 .faq_popup-body .accordion__content {
   display: none;
   padding: 0 16px 16px 16px;
+}
+
+.cookie_popup {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 150;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.8);
+  transition: opacity 200ms ease-in;
+  pointer-events: none;
+  margin: 0px;
+  padding: 0;
+}
+.cookie_popup.active {
+  opacity: 1;
+  pointer-events: auto;
+  overflow-y: auto;
+}
+.cookie_popup-dialog {
+  position: relative;
+  max-width: 1363px;
+  margin: 40px auto;
+}
+@media (max-width: 1780px) {
+  .cookie_popup-dialog {
+    max-width: calc(100% - 60px);
+  }
+}
+@media (max-width: 767px) {
+  .cookie_popup-dialog {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
+.cookie_popup-content {
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: #000;
+  border-radius: 14px;
+  padding: 48px;
+  outline: 0;
+}
+@media (max-width: 767px) {
+  .cookie_popup-content {
+    padding: 48px 25px;
+  }
+}
+.cookie_popup-content h2 {
+  font-family: "Benzin", sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 46.24px;
+  text-align: left;
+  margin-bottom: 16px;
+}
+.cookie_popup-content p {
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 23.12px;
+  margin-bottom: 45px;
+}
+.cookie_popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cookie_popup-header h2 {
+  margin-bottom: 0;
+}
+.cookie_popup-header .close_popup {
+  cursor: pointer;
+  width: 45px;
+  height: 45px;
+}
+@media (max-width: 1200px) {
+  .cookie_popup-header .close_popup {
+    width: 26px;
+    height: 26px;
+  }
+}
+.cookie_popup-body {
+  height: 100%;
 }
 
 .close_popup path, .close_popup circle {

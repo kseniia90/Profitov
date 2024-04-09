@@ -42,6 +42,27 @@ if(document.querySelector('.faq_popup') !== null) {
   });
 }
 
+// COOKIE popup 
+
+if(document.querySelector('.cookie_popup') !== null) {
+
+  document.querySelectorAll('.cookie-btn').forEach(function(button) {
+    button.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.body.style.overflow = 'hidden';
+      document.querySelector('.cookie_popup').classList.add('active');
+    });
+  })
+  document.querySelector('.cookie_popup-content').addEventListener('click', function (e) {
+    e.stopPropagation();
+  });
+  
+  document.querySelector('.cookie_popup .close_popup').addEventListener('click', function (e) {
+    document.body.style.overflow = 'visible';
+    document.querySelector('.cookie_popup').classList.remove('active');
+  });
+}
+
 // Accordion
 
 $(function () {
@@ -73,7 +94,7 @@ function isOnScreen(element) {
 }
 
 let scrollAllowed = true;
-window.addEventListener(
+document.getElementById("fullview").addEventListener(
   "wheel",
   (event) => {
     event.preventDefault();
