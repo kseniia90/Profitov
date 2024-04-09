@@ -60,6 +60,7 @@ if(document.querySelector('.cookie_popup') !== null) {
   document.querySelector('.cookie_popup .close_popup').addEventListener('click', function (e) {
     document.body.style.overflow = 'visible';
     document.querySelector('.cookie_popup').classList.remove('active');
+    document.querySelector('.first-screen__cookie').classList.add('hide');
   });
 }
 
