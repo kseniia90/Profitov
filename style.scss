@@ -427,7 +427,9 @@ header, footer {
         &.hide {
             display: none;
         }
-
+        .cookie-btn {
+            cursor: pointer;
+        }
     }
 }
 

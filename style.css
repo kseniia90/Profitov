@@ -854,6 +854,9 @@ header, footer {
 .first-screen__cookie.hide {
   display: none;
 }
+.first-screen__cookie .cookie-btn {
+  cursor: pointer;
+}
 
 .second-screen {
   display: flex;

@@ -60,8 +60,43 @@ if(document.querySelector('.cookie_popup') !== null) {
   document.querySelector('.cookie_popup .close_popup').addEventListener('click', function (e) {
     document.body.style.overflow = 'visible';
     document.querySelector('.cookie_popup').classList.remove('active');
-    document.querySelector('.first-screen__cookie').classList.add('hide');
   });
+
+  document.querySelector('.cookie-btn-approve').addEventListener('click', function (e) {
+    
+    function setCookie(name, value, days) {
+      var expires = "";
+      if (days) {
+          var date = new Date();
+          date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+          expires = "; expires=" + date.toUTCString();
+      }
+      document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+    }
+    
+    setCookie('cookie_profitof', '1', 30);
+
+    document.querySelector('.first-screen__cookie').classList.add('hide');
+    
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  if(getCookie('cookie_profitof') !== '1') {
+    document.querySelector('.first-screen__cookie').classList.remove('hide');
+  }
+
+});
+
+function getCookie(name) {
+  var nameEQ = name + "=";
+  var ca = document.cookie.split(';');
+  for(var i=0;i < ca.length;i++) {
+      var c = ca[i];
+      while (c.charAt(0)==' ') c = c.substring(1,c.length);
+      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+  }
+  return null;
 }
 
 // Accordion
