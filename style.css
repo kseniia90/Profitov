@@ -1569,7 +1569,6 @@ header, footer {
 @media (max-width: 767px) {
   .third-screen > .container {
     gap: 14px;
-    border: 1px solid red;
   }
 }
 .third-screen .title {
@@ -1630,7 +1629,6 @@ header, footer {
     grid-template-columns: 1fr;
     gap: 12px;
     height: auto;
-    border: 1px solid green;
   }
 }
 .third-screen__content .custom-button {
@@ -1652,7 +1650,6 @@ header, footer {
   }
 }
 .third-screen__content .col {
-  height: 300px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -1684,6 +1681,11 @@ header, footer {
     min-height: 166px;
     padding-right: 8px;
     max-height: 215px;
+  }
+}
+@media (max-width: 767px) {
+  .third-screen__content .col {
+    height: 200px;
   }
 }
 .third-screen__content .col .subtitle-2 {

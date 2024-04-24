@@ -987,7 +987,6 @@ header, footer {
         }
         @media (max-width: $mobile) {
             gap: 14px;
-            border: 1px solid red;
         }
     }
 
@@ -1037,7 +1036,6 @@ header, footer {
             grid-template-columns: 1fr;    
             gap: 12px;  
             height: auto;
-            border: 1px solid green;
         }
         .custom-button {
             font-family: $font-RFDewiExpanded;
@@ -1054,7 +1052,6 @@ header, footer {
             }
         }
         .col {
-            height: 300px;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
@@ -1084,6 +1081,9 @@ header, footer {
                 min-height: 166px;    
                 padding-right: 8px;  
                 max-height: 215px;        
+            }
+            @media (max-width: $mobile) { 
+                height: 200px;
             }
             .subtitle-2 {
                 white-space: nowrap;
