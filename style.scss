@@ -987,7 +987,7 @@ header, footer {
         }
         @media (max-width: $mobile) {
             gap: 14px;
-            height: auto;
+            border: 1px solid red;
         }
     }
 
@@ -1035,7 +1035,9 @@ header, footer {
         }
         @media (max-width: $mobile) {
             grid-template-columns: 1fr;    
-            gap: 12px;    
+            gap: 12px;  
+            height: auto;
+            border: 1px solid green;
         }
         .custom-button {
             font-family: $font-RFDewiExpanded;
