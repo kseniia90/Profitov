@@ -702,26 +702,44 @@ header, footer {
                padding: 10px 31px;
                font-weight: 400;
                border-radius: 23px;
-               position: relative;
-               span {
-                position: relative;
-                z-index: 2;
-               }   
-               &:after {
-                   position: absolute;
-                   content: '';
-                   top: 0;
-                   left: 0;
-                   width: 100%;
-                   height: 100%;
-                   border-radius: 23px;
-                   border: 1px solid $white;
-                   background-image: linear-gradient(274.95deg, #F2CEFF -6.01%, #3F3369 68.06%, #171717 98.24%);
-                   transition: all 0.3s ease;
-                   z-index: 1;
-                   opacity: 0;
-                 }
+               &:hover {
+                background-color: transparent;
+                color: $white;
+               }            
             }
+            .col-3__arrow {
+                height: 72px;
+                width: 72px;
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                @media (max-width: $width1600) {
+                    height: 38px;
+                    width: 38px;
+                }
+                svg {
+                    position: relative;
+                    z-index: 2;
+                    @media (max-width: $width1600) {
+                        height: 38px;
+                        width: 38px;
+                    }
+                }
+                &:after {
+                    position: absolute;
+                    content: '';
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 100%;
+                    background-image: linear-gradient(274.95deg, #F2CEFF -6.01%, #3F3369 68.06%, #171717 98.24%);
+                    transition: all 0.3s ease;
+                    z-index: 1;
+                    opacity: 0;
+                  }
+             }
             &__content {
                 height: 100%;
                 @include flex(space-between, flex-start, column);
@@ -791,7 +809,7 @@ header, footer {
                     height: 80%;
                 }
             }
-            &:hover .custom-button::after{
+            &:hover .col-3__arrow::after{
                 opacity: 1;
             }
         }
@@ -1239,24 +1257,7 @@ header, footer {
         justify-content: space-between;
         align-items: center;
         font-family: $font-benzin;
-        .sign-up_popup-title {
-            font-weight: 700;
-            font-size: 40px;
-            line-height: 46px;
-            @media (max-width: $tablet) {
-                font-size: 24px;
-                line-height: 28px;           
-            }
-        }
-        .close_popup {
-            cursor: pointer;
-            width: 45px;
-            height: 45px;
-            @media (max-width: $tablet) {
-                width: 26px;
-                height: 26px;          
-            }
-        }
+       
     }
     &-body {
         @include flex(flex-start, center, column);
@@ -1326,6 +1327,96 @@ header, footer {
     } 
 }
 
+.sign-up_popup-title {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 46px;
+    @media (max-width: $tablet) {
+        font-size: 24px;
+        line-height: 28px;           
+    }
+}
+.close_popup {
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    @media (max-width: $tablet) {
+        width: 26px;
+        height: 26px;          
+    }
+}
+
+.sign-up-completed_popup {
+    position: fixed; 
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 150;
+    opacity: 0; 
+    background: rgba(0,0,0,0.8);
+    transition: opacity 200ms ease-in; 
+    pointer-events: none; 
+    margin: 0px ;
+    padding: 0;
+    &.active {
+        opacity: 1; 
+        pointer-events: auto; 
+        overflow-y: auto; 
+    }
+    &-dialog {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        max-width: 722px;
+        margin: 40px auto;
+        height: calc(100% - 80px);
+        @media (max-width: $width1600) {
+           max-width: 623px;          
+        }
+        @media (max-width: $tablet) {
+            max-width: 480px;           
+        }
+        @media (max-width:$mobile) {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+    }
+    &-content {
+        width: 100%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        background-color: #000;
+        border-radius: 14px;
+        padding: 48px 48px 88px;
+        outline: 0; 
+        @media (max-width: $width1600) {
+            gap: 16px;      
+        }  
+        @media (max-width:$mobile) {
+            padding: 48px 25px;
+        }
+    }
+    &-header {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        font-family: $font-benzin;
+    }
+    &-body {
+        @include flex(flex-start, center, column);
+        gap: 15px;
+        position: relative;
+        padding: 15px 0;
+        flex: 1 1 auto;   
+        text-align: center;   
+        height: 100%;       
+    } 
+}
+
 .faq_popup {
     position: fixed; 
     top: 0;
@@ -1383,15 +1474,6 @@ header, footer {
             @media (max-width: $tablet) {
                 font-size: 24px;
                 line-height: 28px;           
-            }
-        }
-        .close_popup {
-            cursor: pointer;
-            width: 45px;
-            height: 45px;
-            @media (max-width: $tablet) {
-                width: 26px;
-                height: 26px;          
             }
         }
     }

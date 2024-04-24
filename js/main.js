@@ -42,6 +42,28 @@ if(document.querySelector('.faq_popup') !== null) {
   });
 }
 
+// sign-up completed
+
+if(document.querySelector('.sign-up-completed_popup') !== null) {
+
+  document.querySelectorAll('.sign-up_popup-btn').forEach(function(button) {
+    button.addEventListener('click', function (e) {
+      e.preventDefault();
+    document.querySelector('.sign-up_popup').classList.remove('active');
+      document.body.style.overflow = 'hidden';
+      document.querySelector('.sign-up-completed_popup').classList.add('active');
+    });
+  })
+  document.querySelector('.sign-up-completed_popup-content').addEventListener('click', function (e) {
+    e.stopPropagation();
+  });
+  
+  document.querySelector('.sign-up-completed_popup .close_popup').addEventListener('click', function (e) {
+    document.body.style.overflow = 'visible';
+    document.querySelector('.sign-up-completed_popup').classList.remove('active');
+  });
+}
+
 // COOKIE popup 
 
 if(document.querySelector('.cookie_popup') !== null) {
