@@ -36,18 +36,6 @@ body {
     min-height: 100%;
 }
 
-
-
-@media (min-width: 861px) {
-    .main {
-        // height: 100vh;
-        // scroll-snap-points-y: repeat(100vh);
-        // overflow: auto;
-        // scroll-snap-type: y mandatory;
-    }
-}
-
-
 header, footer {
     width: 100%;
 }
@@ -105,8 +93,6 @@ header, footer {
     color:  $black;
     white-space: nowrap;
     transition: all 0.3s ease;
-    font-family: "RFDewiExpanded", sans-serif;
-    font-weight: 600;
     @media (min-width: $mobile) {
         &:hover {
             color: $white;
@@ -115,6 +101,10 @@ header, footer {
     }  
     @media (max-width: $tablet) {
         padding: 12px 24px;
+    }
+    @media (max-width: $mobile) {
+        font-family: "RFDewiExpanded", sans-serif;
+        font-weight: 600;
     }
 }
 
@@ -234,7 +224,6 @@ header, footer {
         left: 0;
         z-index: -1;
         @media (max-width: $mobile) {
-            // height: 100%;
             &::after {
                 content: '';
                 display: block;
@@ -269,7 +258,6 @@ header, footer {
                 position: relative;
                 left: -20%;
                 width: 125%;
-                // display: none;
                 &::after {
                     content: '';
                     display: block;
@@ -278,7 +266,6 @@ header, footer {
                     position: absolute;
                     z-index: 1;
                     bottom: 0;
-                    // background: linear-gradient(to bottom, transparent, $black);
                 }
             }
         }
@@ -1082,9 +1069,6 @@ header, footer {
                 padding-right: 8px;  
                 max-height: 215px;        
             }
-            // @media (max-width: $mobile) { 
-            //     height: 200px;
-            // }
             .subtitle-2 {
                 white-space: nowrap;
                 margin-bottom: 5px;
@@ -1555,7 +1539,6 @@ header, footer {
     &-dialog {
         position: relative;
         max-width: 1363px;
-        // height: calc(100% - 80px);
         margin: 40px auto;
         @media (max-width: $width1600) {
             max-width: calc(100% - 60px);          

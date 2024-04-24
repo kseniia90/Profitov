@@ -472,8 +472,6 @@ header, footer {
   color: #030303;
   white-space: nowrap;
   transition: all 0.3s ease;
-  font-family: "RFDewiExpanded", sans-serif;
-  font-weight: 600;
 }
 @media (min-width: 767px) {
   .custom-button:hover {
@@ -484,6 +482,12 @@ header, footer {
 @media (max-width: 1200px) {
   .custom-button {
     padding: 12px 24px;
+  }
+}
+@media (max-width: 767px) {
+  .custom-button {
+    font-family: "RFDewiExpanded", sans-serif;
+    font-weight: 600;
   }
 }
 
