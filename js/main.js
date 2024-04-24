@@ -139,7 +139,7 @@ $(".accordion__title").on("click", function (e) {
 });
 });
 
-// new WOW().init();
+new WOW().init();
 
 function isOnScreen(element) {
   if (

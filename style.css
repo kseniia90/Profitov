@@ -1549,6 +1549,7 @@ header, footer {
 @media (max-width: 992px) {
   .third-screen {
     height: auto;
+    display: block;
   }
 }
 .third-screen > .container {
@@ -1627,7 +1628,6 @@ header, footer {
   .third-screen__content {
     grid-template-columns: 1fr;
     gap: 12px;
-    min-height: 400px;
   }
 }
 .third-screen__content .custom-button {
