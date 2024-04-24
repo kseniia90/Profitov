@@ -725,7 +725,7 @@ header, footer {
     max-width: none;
     justify-content: flex-end;
     align-items: center;
-    padding-bottom: 20px;
+    padding-bottom: 15px;
   }
   .first-screen__content aside h2 {
     text-align: center;
