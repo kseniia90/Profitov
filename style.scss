@@ -987,6 +987,7 @@ header, footer {
         }
         @media (max-width: $mobile) {
             gap: 14px;
+            height: auto;
         }
     }
 

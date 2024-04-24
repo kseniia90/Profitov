@@ -1569,6 +1569,7 @@ header, footer {
 @media (max-width: 767px) {
   .third-screen > .container {
     gap: 14px;
+    height: auto;
   }
 }
 .third-screen .title {
