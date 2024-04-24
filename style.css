@@ -1683,11 +1683,6 @@ header, footer {
     max-height: 215px;
   }
 }
-@media (max-width: 767px) {
-  .third-screen__content .col {
-    height: 200px;
-  }
-}
 .third-screen__content .col .subtitle-2 {
   white-space: nowrap;
   margin-bottom: 5px;
@@ -1799,6 +1794,7 @@ header, footer {
 @media (max-width: 767px) {
   .third-screen__content .col .col-1__img {
     padding-top: 20px;
+    height: 180px;
   }
   .third-screen__content .col .col-1__img .static {
     display: none;

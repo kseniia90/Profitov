@@ -1082,9 +1082,9 @@ header, footer {
                 padding-right: 8px;  
                 max-height: 215px;        
             }
-            @media (max-width: $mobile) { 
-                height: 200px;
-            }
+            // @media (max-width: $mobile) { 
+            //     height: 200px;
+            // }
             .subtitle-2 {
                 white-space: nowrap;
                 margin-bottom: 5px;
@@ -1163,6 +1163,7 @@ header, footer {
                 }
                 @media (max-width: $mobile) {
                     padding-top: 20px; 
+                    height: 180px;
                     .static {
                         display: none;
                     }              
