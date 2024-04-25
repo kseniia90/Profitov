@@ -8,7 +8,7 @@ $tablet: 1200px;
 $mobile: 767px;
 
 
-$font-raleway: 'Raleway', sans-serif;
+$font-inter: 'Inter', sans-serif;
 $font-benzin: 'Benzin', sans-serif;
 $font-RFDewiExpanded: 'RFDewiExpanded', sans-serif;
 
@@ -23,7 +23,7 @@ html, body {
 }
 
 body {
-    font-family: $font-raleway;
+    font-family: $font-inter;
     color: $white;
     font-weight: 400;
     line-height: 115.6%;
@@ -200,7 +200,7 @@ header, footer {
 .first-screen {
     overflow: hidden;
     position: relative;
-    @media (max-width: 992px) {
+    @media (max-width:1024px) {
         height: auto;
     }
     @media (max-width: $mobile) {
@@ -221,7 +221,9 @@ header, footer {
         width: 100vw;
         position: absolute;
         top: 0;
-        left: 0;
+        // left: 0;
+        left: 50%;
+        transform: translateX(-50%);
         z-index: -1;
         @media (max-width: $mobile) {
             &::after {
@@ -235,17 +237,18 @@ header, footer {
             }
         }
         video {
-            width: 100vw;
-            margin-top: -250px;   
+            // width: 100vw;
+            width: calc(100% + 50px);
+            margin-top: -180px;   
             position: relative;
             &::-webkit-media-controls {
                 display: none;
             }   
             @media (max-width: 1900px) {
-                margin-top: -200px; 
+                // margin-top: -200px; 
             }  
             @media (max-width: 1600px) {
-                margin-top: -150px;
+                margin-top: -140px;
             }  
             @media (max-width: $tablet) {
                 margin-top: -100px;
@@ -268,6 +271,9 @@ header, footer {
                     bottom: 0;
                 }
             }
+            @media (max-height: 600px) {
+             
+            }
         }
     }
     video::-webkit-media-controls {
@@ -280,7 +286,7 @@ header, footer {
         @media (max-width: $tablet) {
             height: calc(100% - 119px);
         }
-        @media (max-width: 992px) {
+        @media (max-width:1024px) {
             height: 495px;
         }
         @media (max-width: $mobile) {
@@ -295,6 +301,11 @@ header, footer {
             .buttons-block {
                 display: none;
             }
+            @media (max-width: $tablet) {
+                h2 { 
+                 max-width: 230px;
+                }
+             }
             @media (max-width: $mobile) {
                 max-width: none;
                 justify-content: flex-end;
@@ -304,6 +315,7 @@ header, footer {
                     text-align: center;
                     font-size: 40px;
                     line-height: 46px;
+                    max-width: none;
                 }
                 .menu {
                     display: none;
@@ -323,6 +335,9 @@ header, footer {
                         font-weight: 600;
                     }
                 }
+            } 
+            @media (max-height: 599px) {
+                padding-bottom: 15px;
             }
         }
         .menu ul li:not(:last-child) {
@@ -366,7 +381,7 @@ header, footer {
         border-radius: 18px;
         background: #030303CC;
         text-align: left;
-        font-family: $font-raleway;
+        font-family: $font-inter;
         font-size: 20px;
         font-weight: 400;
         line-height: 23.12px;
@@ -424,13 +439,13 @@ header, footer {
 
 .second-screen {
     @include flex(center, center, row);
-    padding: 70px 0;
-    min-height: 700px;
+    padding: 50px 0;
+    min-height: 725px;
     @media (max-width: $tablet) {
         min-height:auto;
         // padding: 45px 0 0;
     }
-    @media (max-width: 992px) {
+    @media (max-width:1024px) {
         height: auto;
     }
     @media (max-width: $mobile) {
@@ -456,7 +471,7 @@ header, footer {
             font-size: 24px;
             line-height: 28px;
             font-weight: 600;
-            @media (max-width: 1400px) {
+            @media (max-width: 1470px) {
                 padding-left: 15px;
                 padding-right: 15px;
             }
@@ -499,7 +514,7 @@ header, footer {
                     font-size: 40px;
                 }
 
-                @media (max-width: 1590px) {
+                @media (max-width: 1625px) {
                     font-size: 36px;
                 }
                 @media (max-width: 1465px) {
@@ -813,7 +828,7 @@ header, footer {
             -webkit-backface-visibility: hidden;
             position: relative;
             z-index: 2;
-            max-height: 306px;
+            max-height: 305px;
             &:after {
                 position: absolute;
                 content: '';
@@ -830,21 +845,17 @@ header, footer {
             @media (max-width: $width1600) {
                 border-radius: 12px;
                 padding: 24px;
-                max-height: 220px;
+                max-height: 280px;
             }
             @media (max-width: $tablet) {
                 padding: 12px;
-                max-height: 180px;
-            }
-            @media (max-width: $mobile) {
-                max-height: 141px;
+                max-height: none;
             }
             &.mobile {
                 display: none;
                 @media (max-width: $mobile) {
                     display: flex;
                     flex-direction: row-reverse;
-                    min-height: 141px;
                     order: 5;
                     padding-left: 12px !important;
                     &:after {
@@ -871,52 +882,52 @@ header, footer {
                     max-width: 55%;
                     align-items: flex-end;
                     padding: 12px;
+                    padding-left: 0px;
                     text-align: end;
                 }
             }
             .col-1__img {
-                flex: 0 1 41%;
+                flex: 0 1 43%;
                 height: calc(100% + 20px);
                 @include flex(flex-end, flex-start, row);
                 position: relative;
                 top: -20px;
                 z-index: 5;
-                padding-right: 15px;
+                padding-right: 25px;
                 overflow: hidden;
                 .active {
                    display: none;
                 }
                 @media (max-width:1800px) {
-                    flex: 0 1 41%;
                     height: calc(100% + 15px);
                     position: relative;
                     top: -15px;
                 }
                 @media (max-width: $width1600) {
                     align-items: flex-start;
+                    padding-right: 24px;
                 }
-                @media (max-width: 1520px) {
-                    padding-right: 10px;
-                }
-                @media (max-width: 1440px) {
+                @media (max-width: 1600px) {
                     flex: 0 1 40%;
-                }
-                @media (max-width: 1270px) {
-                    flex: 0 1 35%;
                     height: 100%;
                     top: 0;
                 }
+                @media (max-width: 1270px) {
+                    flex: 0 1 35%;
+                }
                 @media (max-width: $tablet) {
                     flex: 0 1 42%;
+                    padding-right: 12px;
                 }
                 @media (max-width: 915px) {
                     flex: 0 1 40%;
                 }
                 @media (max-width: $mobile) {
                     flex: 0 1 42%;
-                    padding-right: 12px;
+                    max-height: 160px;
                     justify-content: flex-start;
                     width: auto;
+                    padding-right: 0px;
                 }
             }
             img {
@@ -950,7 +961,7 @@ header, footer {
 .third-screen {
     @include flex(space-between, center, column);
     gap: 5px;
-    padding: 70px 0;
+    padding: 50px 0;
     min-height: 800px;
     @media (max-width: $width1600) {
         padding: 50px 0;
@@ -959,7 +970,7 @@ header, footer {
         min-height:auto;
         padding: 45px 0;
     }
-    @media (max-width: 992px) {
+    @media (max-width:1024px) {
         height: auto;
         display: block;
     }
@@ -981,12 +992,7 @@ header, footer {
         align-self: start;
         position: relative;
         display: inline-block;
-        max-width: 1130px;
-        @media (max-width: $tablet) {
-            max-width: 400px;
-        }
         @media (max-width: $mobile) {
-            max-width: 70%;
             font-size: 20px;
             line-height: 23px;
         }
@@ -1273,7 +1279,7 @@ header, footer {
             height: 100%;
             @include flex(flex-start, stretch, column);
             gap: 24px;
-            font-family: $font-raleway;
+            font-family: $font-inter;
             font-weight: 400;
             font-size: 20px;
             line-height: 23px;
@@ -1570,7 +1576,7 @@ header, footer {
             margin-bottom: 16px;
         }
         p {
-            font-family:$font-raleway;
+            font-family:$font-inter;
             font-weight: 600;
             font-size: 20px;
             line-height: 23.12px;
